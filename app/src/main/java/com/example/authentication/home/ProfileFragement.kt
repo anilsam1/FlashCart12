@@ -1,16 +1,22 @@
 package com.example.authentication.home
 
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.authentication.MainActivity
+import com.example.authentication.R
 import com.example.authentication.authentication.NewPass
 import com.example.authentication.databinding.FragmentProfileFragementBinding
+import java.net.URI
 
 
 class ProfileFragement : Fragment() {
@@ -27,11 +33,39 @@ class ProfileFragement : Fragment() {
 
         _binding = FragmentProfileFragementBinding.inflate(inflater, container, false)
 
+        val encodedImage = Oos.sharedPreferences?.getString("profileImage", "")
+        val imageBytes = Base64.decode(encodedImage, Base64.DEFAULT)
+        val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
 
-        binding.profilePicture.setOnClickListener{
-       //     uploadimag(binding.profilePicture)
+        binding.profilePicture.setImageBitmap(bitmap)
 
+        if (bitmap == null){
+            binding.profilePicture.setImageResource(R.drawable.profile)
         }
+
+        binding.edit.setOnClickListener{
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setTitle("Edit Profile?")
+            builder.setMessage("Would you like to edit your profile picture? You can choose to upload a new image, remove your current profile picture, or cancel the action.")
+            builder.setIcon(R.drawable.ic_persone)
+            builder.setPositiveButton("Yes"){dialogInterface, which ->
+            uploadimag(binding.profilePicture)
+            }
+            builder.setNeutralButton("Cancel"){dialogInterface , which ->
+            }
+            builder.setNegativeButton("Remove Profile"){dialogInterface, which ->
+                Oos.editor?.remove("profileImage")
+                Oos.editor?.apply()
+                binding.profilePicture.setImageResource(R.drawable.profile)
+
+
+            }
+            val alertDialog: AlertDialog = builder.create()
+            alertDialog.setCancelable(false)
+            alertDialog.show()
+
+
+}
 
         Oos.sharedPreferences?.let {
             if (it.contains("NAME")) {
@@ -77,7 +111,19 @@ class ProfileFragement : Fragment() {
 
 
 
-        Log.e("sdfasf" , Oos.sharedPreferences!!.getBoolean("On" , true).toString())
+
+
+
+//        val uri = Uri.parse(image)
+//        Log.e("uri" , uri.toString())
+
+//
+//        if(uri != null){
+//            binding.profilePicture.setImageURI(uri)
+//        }else if (uri == null){
+//
+//        }
+
 
         return binding.root
     }
@@ -93,7 +139,17 @@ val intent = Intent()
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1){
+            val inputStream = activity?.contentResolver?.openInputStream(data?.data!!)
+            val imageBytes = inputStream?.readBytes()
+            val encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT)
+            Oos.editor?.putString("profileImage", encodedImage)
+            Oos.editor?.apply()
+
+
+            Log.e("data" , data?.data.toString())
             binding.profilePicture.setImageURI(data?.data)
         }
     }
+
+
 }
