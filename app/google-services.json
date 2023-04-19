@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "47266753780",
+    "project_id": "online-ordering-system-628e2",
+    "storage_bucket": "online-ordering-system-628e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47266753780:android:fed314558d297f96fd02a1",
+        "android_client_info": {
+          "package_name": "com.example.authentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47266753780-4cdv9s2vdd7l2n06qaaheabjno1cc2jl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUn61GB5Rp4Uib2CIgMuwmpwEDtB10Y8o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47266753780-4cdv9s2vdd7l2n06qaaheabjno1cc2jl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

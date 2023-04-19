@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+
+            android:id="@+id/arrow"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/arrow"
+            app:iconSize="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+
+            android:id="@+id/like"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/emptyheart"
+            app:iconSize="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.955"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <ImageView
+        android:id="@+id/image_food"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/ic_launcher_background"
+        tools:ignore="ContentDescription" />
+</LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            app:cardCornerRadius="40dp"
+            android:backgroundTint="#C2C2F3"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_product_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font1"
+                android:text="Maks Burger"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font1"
+        android:text="$ "
+        android:layout_marginStart="20dp"
+        android:layout_marginVertical="5dp"
+        android:textColor="#707FF6"
+        android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/item_prize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font1"
+                    android:text="Maks Burger"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginVertical="5dp"
+                    android:textColor="#707FF6"
+                    android:textSize="18sp" />
+
+</LinearLayout>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2">
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font1"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    android:text="asdfghjkl;asdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnxcvbnmqwertyuiopasdfghjklzxcvbnmasdfghjklqwertyuiopsdfghjklzxcvbnmasdfghjklqwertyu"
+                    android:textSize="12sp"
+                    tools:ignore="UnusedAttribute"
+                    tools:layout_editor_absoluteY="375dp" />
+            </ScrollView>
+
+
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cart"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:layout_gravity="bottom"
+                android:text="Add to cart"
+            android:layout_margin="20dp"
+                android:textColor="@color/white"
+                android:background="@drawable/custom_edit"
+                />
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_gravity="bottom"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:visibility="gone" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Go_to_cart"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:text="View Cart"
+                android:layout_marginHorizontal="40dp"
+                android:textColor="@color/white"
+                android:background="@drawable/custom_edit"
+                />
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>

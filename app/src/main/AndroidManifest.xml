@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:name=".home.Oos"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Authentication"
+        tools:targetApi="31">
+        <activity
+            android:name=".authentication.splacescreen"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".home.CartDetaile"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.WishlistDetailed"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".authentication.NewPass"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".walkthroughscreen.Walkthrought"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.OrderHistory"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+
+        <activity
+            android:name=".home.DetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.HomeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing" />
+    </application>
+
+</manifest>

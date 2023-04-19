@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/login">
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.authentication.authentication.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_registration"
+            app:destination="@id/registration" />
+        <action
+            android:id="@+id/action_login_to_forgot2"
+            app:destination="@id/forgot2" />
+        <action
+            android:id="@+id/action_login_to_homeActivity"
+            app:destination="@id/homeActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration"
+        android:name="com.example.authentication.authentication.Registration"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registration_to_otp"
+            app:destination="@id/otp" />
+        <action
+            android:id="@+id/action_registration_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/otp"
+        android:name="com.example.authentication.authentication.Otp"
+        android:label="fragment_otp"
+        tools:layout="@layout/fragment_otp" >
+        <action
+            android:id="@+id/action_otp_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgot2"
+        android:name="com.example.authentication.authentication.ForgotPassword"
+        android:label="fragment_forgot"
+        tools:layout="@layout/fragment_forgot" >
+        <action
+            android:id="@+id/action_forgot2_to_otp"
+            app:destination="@id/otp" />
+    </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.example.authentication.home.HomeActivity"
+        android:label="HomeActivity" />
+</navigation>
